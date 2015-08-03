@@ -1,0 +1,56 @@
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Lead Rating</h1>
+
+
+    <p id="example">
+        If your lead is <span data-var="age" class="TKAdjustableNumber" data-min="18" data-max="100"> years</span> old <span data-var="man woman"></span> and owns a home, then his odds of buying a home is <span data-var="calories"></span> %
+    </p>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+<!-- Tangle -->
+<script type="text/javascript" src="../dist/tangle/Tangle.js"></script>
+
+<!-- TangleKit (optional) -->
+<link rel="stylesheet" href="../dist/tangle/TangleKit/TangleKit.css" type="text/css">
+<script type="text/javascript" src="../dist/tangle/TangleKit/mootools.js"></script>
+<script type="text/javascript" src="../dist/tangle/TangleKit/sprintf.js"></script>
+<script type="text/javascript" src="../dist/tangle/TangleKit/BVTouchable.js"></script>
+<script type="text/javascript" src="../dist/tangle/TangleKit/TangleKit.js"></script>
+
+<!-- example -->
+<script type="text/javascript">
+
+
+    function setUpTangle () {
+
+        var element = document.getElementById("example");
+
+        var tangle = new Tangle(element, {
+            initialize: function () {
+                this.age = 30;
+                this.caloriesPerCookie = 30;
+            },
+            update: function () {
+                this.calories = this.age * this.caloriesPerCookie/100;
+            }
+        });
+
+        tangle.controls.c_toggle = function (el, worksheet) {
+          el.addEvent("mousedown", function (event) {
+            var isActive = worksheet.getValue(el);
+            worksheet.setValue(el, isActive ? 0 : 1);
+          });
+        };
+
+    }
+    setUpTangle();
+
+</script>
