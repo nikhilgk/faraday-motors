@@ -1,56 +1,238 @@
+<link href="../css/bootstrap-slider.css" rel="stylesheet">
+<script src="../js/bootstrap-slider.min.js"></script>
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
+<style type="text/css">
+
+</style>
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Lead Rating</h1>
 
 
-    <p id="example">
-        If your lead is <span data-var="age" class="TKAdjustableNumber" data-min="18" data-max="100"> years</span> old <span data-var="man woman"></span> and owns a home, then his odds of buying a home is <span data-var="calories"></span> %
-    </p>
+            <form id="leads" method="post" class="form-horizontal">
+
+                <div class="form-group">
+                    <label class="col-xs-3 control-label">Income</label>
+                    <div class="col-xs-9">
+                        <div class="btn-group" data-toggle="buttons">
+                            <input id="income" type="text" name="income" />
+                            <span class="label label-default">$<span id="incomeSliderVal">80</span>K</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-xs-3 control-label">Age</label>
+                    <div class="col-xs-9">
+                        <div class="btn-group" data-toggle="buttons">
+                            <input id="age" type="text" name="age" />
+                            <span class="label label-default"><span id="ageSliderVal">80</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-xs-3 control-label">Gender</label>
+                    <div class="col-xs-9">
+                        <div class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-default active">
+                                <input type="radio" name="gender" value="M" checked="True" /> Male
+                            </label>
+                            <label class="btn btn-default">
+                                <input type="radio" name="gender" value="F" /> Female
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-3 control-label">Bachelor degree or higher</label>
+                    <div class="col-xs-9">
+                        <input id="edu" type="checkbox" name="edu" checked data-toggle="toggle"  data-on="Yes" data-off="No">
+                    </div>
+                </div> 
+                <div class="form-group">
+                    <label class="col-xs-3 control-label">Owns Home</label>
+                    <div class="col-xs-9">
+                        <input id="homeown" type="checkbox" name="homeown" checked data-toggle="toggle"  data-on="Yes" data-off="No">
+                    </div>
+                </div> 
+                <div class="form-group">
+                    <label class="col-xs-3 control-label">State</label>
+                    <div class="col-xs-3">
+                        <select class="form-control" id="state" name="state">
+                            <option value="AK">Alaska</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DC">District of Columbia</option>
+                            <option value="DE">Delaware</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="IA">Iowa</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MD">Maryland</option>
+                            <option value="ME">Maine</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MT">Montana</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NY">New York</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="PR">Puerto Rico</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VA">Virginia</option>
+                            <option value="VT">Vermont</option>
+                            <option value="WA">Washington</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                    </div>
+                </div>
+
+            </form>
+            <div class="jumbotron">
+              <h1 class="text-center"><span id="rating"></span></h1>
+          </div>
 
 
 
+      </div>
 
-        </div>
-    </div>
+
+  </div>
 </div>
 
-<!-- Tangle -->
-<script type="text/javascript" src="../dist/tangle/Tangle.js"></script>
 
-<!-- TangleKit (optional) -->
-<link rel="stylesheet" href="../dist/tangle/TangleKit/TangleKit.css" type="text/css">
-<script type="text/javascript" src="../dist/tangle/TangleKit/mootools.js"></script>
-<script type="text/javascript" src="../dist/tangle/TangleKit/sprintf.js"></script>
-<script type="text/javascript" src="../dist/tangle/TangleKit/BVTouchable.js"></script>
-<script type="text/javascript" src="../dist/tangle/TangleKit/TangleKit.js"></script>
-
-<!-- example -->
 <script type="text/javascript">
+    $("#income").slider({
+        id: "incomeSlider",
+        max: 210,
+        min: 0,
+        value: 100,
+    });
+    $("#income").on("slide", function(slideEvt) {
+        $("#incomeSliderVal").text(slideEvt.value);
+    });
+
+    $("#age").slider({
+        id: "ageSlider",
+        min: 0,
+        max: 120,
+        value: 30,
+    });
+    $("#age").on("slide", function(slideEvt) {
+        $("#ageSliderVal").text(slideEvt.value);
+    });
+
+    $( "input, select" ).change(function() {
+        updateRates();
+    });
+
+    function updateRates(){
+      console.log("Change");
+      console.log(
+            parseInt($('input[name=income]').val())*1000,
+            $('input[name=gender]:checked').val(),
+            $('input[name=age]').val(),
+            $("#edu").is(':checked'), 
+            $("#homeown").is(':checked'), 
+            $('select[name=state]').val() )
+      var rating = rateIt(
+            parseInt($('input[name=income]').val())*1000,
+            $('input[name=gender]:checked').val(),
+            $('input[name=age]').val(),
+            $("#edu").is(':checked'),
+            $("#homeown").is(':checked'), 
+            $('select[name=state]').val() )
+      console.log(rating);
+      $("#rating").text("Rating: "+rating+" points")        
+    }
+
+    var state_ranks = {"AK":0,"AL":2,"AR":0,"AZ":6,"CA":15,"CO":3,"CT":2,"DC":2,"DE":4,"FL":3,"GA":5,"HI":3,"IA":0,"ID":0,"IL":3,"IN":2,"KS":0,"KY":1,"LA":1,"MA":1,"MD":7,"ME":1,"MI":5,"MN":3,"MO":0,"MS":0,"MT":1,"NC":1,"ND":0,"NE":1,"NH":0,"NJ":3,"NM":0,"NV":3,"NY":2,"OH":0,"OK":0,"OR":2,"PA":2,"PR":0,"RI":1,"SC":1,"SD":0,"TN":2,"TX":3,"UT":3,"VA":3,"VT":0,"WA":2,"WI":2,"WV":0,"WY":0}
+
+    function rateIt(income, gender, age, higherEdu, homeOwnership, state){
+        rating = 0
+        if (income>=10000   && income <  14999)     rating = rating +  0.00031;
+        if (income>=100000  && income <  124999)    rating = rating +  0.0271;
+        if (income>=125000  && income <  149999)    rating = rating +  0.160549;
+        if (income>=15000   && income <  19999)     rating = rating +  0.00102;
+        if (income>=150000  && income <  199999)    rating = rating +  0.337935;
+        if (income>=20000   && income <  24999)     rating = rating +  0.000189;
+        if (income>=200000  && income <  100000000) rating = rating +  0.120424;
+        if (income>=25000   && income <  29999)     rating = rating +  0.068113;
+        if (income>=30000   && income <  34999)     rating = rating +  0.000928;
+        if (income>=35000   && income <  39999)     rating = rating +  0.000076;
+        if (income>=40000   && income <  44999)     rating = rating +  0.000194;
+        if (income>=45000   && income <  49999)     rating = rating +  0.000072;
+        if (income>=50000   && income <  59999)     rating = rating +  0.000132;
+        if (income>=60000   && income <  74999)     rating = rating +  0.062264;
+        if (income>=75000   && income <  99999)     rating = rating +  0.003614;
+        if (income>=0       && income <  10000)     rating = rating +  0.077694;
 
 
-    function setUpTangle () {
+        if (gender=='F' && (  age>=18 && age < 24))                 rating = rating + 0.000894
+        if (gender=='F' && (  age>=25 && age < 34)   && higherEdu)  rating = rating + 0.000247
+        if (gender=='F' && (  age>=25 && age < 34))                 rating = rating + 0.001653
+        if (gender=='F' && (  age>=25 && age < 150)  && higherEdu)  rating = rating + 0.013628
+        if (gender=='F' && (  age>=25 && age < 150)  && higherEdu)  rating = rating + 0.001921
+        if (gender=='F' && (  age>=25 && age < 150))                rating = rating + 0.002089
+        if (gender=='F' && (  age>=35 && age < 44)   && higherEdu)  rating = rating + 0.000659
+        if (gender=='F' && (  age>=35 && age < 44))                 rating = rating + 0.005604
+        if (gender=='F' && (  age>=45 && age < 64)   && higherEdu)  rating = rating + 0.000448
+        if (gender=='F' && (  age>=45 && age < 64))                 rating = rating + 0.003736
+        if (gender=='F' && (  age>=65 && age < 150)  && higherEdu)  rating = rating + 0.00094
+        if (gender=='F' && (  age>=65 && age < 150))                rating = rating + 0.002285
+        if (gender=='F' && (  age>=0   && age < 150) && higherEdu)  rating = rating + 0.013696
+        if (gender=='M' && (  age>=18 && age < 24))                 rating = rating + 0.001122
+        if (gender=='M' && (  age>=25 && age < 34)   && higherEdu)  rating = rating + 0.000155
+        if (gender=='M' && (  age>=25 && age < 34))                 rating = rating + 0.010014
+        if (gender=='M' && (  age>=25 && age < 150)  && higherEdu)  rating = rating + 0.00333
+        if (gender=='M' && (  age>=25 && age < 150)  && higherEdu)  rating = rating + 0.024949
+        if (gender=='M' && (  age>=25 && age < 150))                rating = rating + 0.010387
+        if (gender=='M' && (  age>=35 && age < 44)   && higherEdu)  rating = rating + 0.00823
+        if (gender=='M' && (  age>=35 && age < 44))                 rating = rating + 0.001309
+        if (gender=='M' && (  age>=45 && age < 64)   && higherEdu)  rating = rating + 0.000614
+        if (gender=='M' && (  age>=45 && age < 64))                 rating = rating + 0.001251
+        if (gender=='M' && (  age>=65 && age < 150)  && higherEdu)  rating = rating + 0.004096
+        if (gender=='M' && (  age>=65 && age < 150))                rating = rating + 0.009753
+        if (gender=='M' && (  age>=0   && age < 150) && higherEdu)  rating = rating + 0.001027
 
-        var element = document.getElementById("example");
+        if (homeOwnership == 'Y') rating = rating + 0.005202
 
-        var tangle = new Tangle(element, {
-            initialize: function () {
-                this.age = 30;
-                this.caloriesPerCookie = 30;
-            },
-            update: function () {
-                this.calories = this.age * this.caloriesPerCookie/100;
-            }
-        });
+        rating = rating + state_ranks[state]*0.002248
 
-        tangle.controls.c_toggle = function (el, worksheet) {
-          el.addEvent("mousedown", function (event) {
-            var isActive = worksheet.getValue(el);
-            worksheet.setValue(el, isActive ? 0 : 1);
-          });
-        };
+        return (rating*100*100/45).toFixed(2);
 
     }
-    setUpTangle();
+    updateRates()
 
 </script>
