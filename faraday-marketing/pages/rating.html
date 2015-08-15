@@ -1,56 +1,158 @@
+<link href="../css/bootstrap-slider.css" rel="stylesheet">
+<script src="../js/bootstrap-slider.min.js"></script>
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
+<style type="text/css">
+
+</style>
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Lead Rating</h1>
 
 
-    <p id="example">
-        If your lead is <span data-var="age" class="TKAdjustableNumber" data-min="18" data-max="100"> years</span> old <span data-var="man woman"></span> and owns a home, then his odds of buying a home is <span data-var="calories"></span> %
-    </p>
+            <form id="leads" method="post" class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-xs-3 control-label">Gender</label>
+                    <div class="col-xs-9">
+                        <div class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-default">
+                                <input type="radio" name="gender" value="M" checked="True" /> Male
+                            </label>
+                            <label class="btn btn-default">
+                                <input type="radio" name="gender" value="F" /> Female
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-xs-3 control-label">Income</label>
+                    <div class="col-xs-9">
+                        <div class="btn-group" data-toggle="buttons">
+                            <input id="income" type="text" name="income" />
+                            <span class="label label-default">$<span id="incomeSliderVal">80</span>K</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-xs-3 control-label">Age</label>
+                    <div class="col-xs-9">
+                        <div class="btn-group" data-toggle="buttons">
+                            <input id="age" type="text" name="age" />
+                            <span class="label label-default"><span id="ageSliderVal">80</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-xs-3 control-label">Bachelor degree or higher</label>
+                    <div class="col-xs-9">
+                        <input id="edu" type="checkbox" name="edu" checked data-toggle="toggle"  data-on="Yes" data-off="No">
+                    </div>
+                </div> 
+
+
+            </form>
+            <div class="jumbotron">
+              <h1 class="text-center">Rating: <span id="rating">10</span>%</h1>
+          </div>
 
 
 
+      </div>
 
-        </div>
-    </div>
+
+  </div>
 </div>
 
-<!-- Tangle -->
-<script type="text/javascript" src="../dist/tangle/Tangle.js"></script>
 
-<!-- TangleKit (optional) -->
-<link rel="stylesheet" href="../dist/tangle/TangleKit/TangleKit.css" type="text/css">
-<script type="text/javascript" src="../dist/tangle/TangleKit/mootools.js"></script>
-<script type="text/javascript" src="../dist/tangle/TangleKit/sprintf.js"></script>
-<script type="text/javascript" src="../dist/tangle/TangleKit/BVTouchable.js"></script>
-<script type="text/javascript" src="../dist/tangle/TangleKit/TangleKit.js"></script>
-
-<!-- example -->
 <script type="text/javascript">
+    $("#income").slider({
+        id: "incomeSlider",
+        max: 210,
+        min: 0,
+        value: 100,
+    });
+    $("#income").on("slide", function(slideEvt) {
+        $("#incomeSliderVal").text(slideEvt.value);
+    });
+
+    $("#age").slider({
+        id: "ageSlider",
+        min: 0,
+        max: 120,
+        value: 30,
+    });
+    $("#age").on("slide", function(slideEvt) {
+        $("#ageSliderVal").text(slideEvt.value);
+    });
+
+    $( "input" ).change(function() {
+      console.log("Change");
+      console.log(
+            parseInt($('input[name=income]').val())*1000,
+            $('input[name=gender]:checked').val(),
+            $('input[name=age]').val(),
+            $("#edu").is(':checked') )
+      var rating = rateIt(
+            parseInt($('input[name=income]').val())*1000,
+            $('input[name=gender]:checked').val(),
+            $('input[name=age]').val(),
+            $("#edu").is(':checked') )
+      console.log(rating);
+      $("#rating").text(rating)
+  });
+
+    function rateIt(income, gender, age, higherEdu){
+        rating = 0
+        if (income>=10000   && income <  14999)     rating = rating +  0.00031;
+        if (income>=100000  && income <  124999)    rating = rating +  0.0271;
+        if (income>=125000  && income <  149999)    rating = rating +  0.160549;
+        if (income>=15000   && income <  19999)     rating = rating +  0.00102;
+        if (income>=150000  && income <  199999)    rating = rating +  0.337935;
+        if (income>=20000   && income <  24999)     rating = rating +  0.000189;
+        if (income>=200000  && income <  100000000) rating = rating +  0.120424;
+        if (income>=25000   && income <  29999)     rating = rating +  0.068113;
+        if (income>=30000   && income <  34999)     rating = rating +  0.000928;
+        if (income>=35000   && income <  39999)     rating = rating +  0.000076;
+        if (income>=40000   && income <  44999)     rating = rating +  0.000194;
+        if (income>=45000   && income <  49999)     rating = rating +  0.000072;
+        if (income>=50000   && income <  59999)     rating = rating +  0.000132;
+        if (income>=60000   && income <  74999)     rating = rating +  0.062264;
+        if (income>=75000   && income <  99999)     rating = rating +  0.003614;
+        if (income>=0       && income <  10000)     rating = rating +  0.077694;
 
 
-    function setUpTangle () {
-
-        var element = document.getElementById("example");
-
-        var tangle = new Tangle(element, {
-            initialize: function () {
-                this.age = 30;
-                this.caloriesPerCookie = 30;
-            },
-            update: function () {
-                this.calories = this.age * this.caloriesPerCookie/100;
-            }
-        });
-
-        tangle.controls.c_toggle = function (el, worksheet) {
-          el.addEvent("mousedown", function (event) {
-            var isActive = worksheet.getValue(el);
-            worksheet.setValue(el, isActive ? 0 : 1);
-          });
-        };
+        if (gender='F' && (  age>=18 && age < 24))                 rating = rating + 0.000894
+        if (gender='F' && (  age>=25 && age < 34)   && higherEdu)  rating = rating + 0.000247
+        if (gender='F' && (  age>=25 && age < 34))                 rating = rating + 0.001653
+        if (gender='F' && (  age>=25 && age < 150)  && higherEdu)  rating = rating + 0.013628
+        if (gender='F' && (  age>=25 && age < 150)  && higherEdu)  rating = rating + 0.001921
+        if (gender='F' && (  age>=25 && age < 150))                rating = rating + 0.002089
+        if (gender='F' && (  age>=35 && age < 44)   && higherEdu)  rating = rating + 0.000659
+        if (gender='F' && (  age>=35 && age < 44))                 rating = rating + 0.005604
+        if (gender='F' && (  age>=45 && age < 64)   && higherEdu)  rating = rating + 0.000448
+        if (gender='F' && (  age>=45 && age < 64))                 rating = rating + 0.003736
+        if (gender='F' && (  age>=65 && age < 150)  && higherEdu)  rating = rating + 0.00094
+        if (gender='F' && (  age>=65 && age < 150))                rating = rating + 0.002285
+        if (gender='F' && (  age>=0   && age < 150) && higherEdu)  rating = rating + 0.013696
+        if (gender='M' && (  age>=18 && age < 24))                 rating = rating + 0.001122
+        if (gender='M' && (  age>=25 && age < 34)   && higherEdu)  rating = rating + 0.000155
+        if (gender='M' && (  age>=25 && age < 34))                 rating = rating + 0.010014
+        if (gender='M' && (  age>=25 && age < 150)  && higherEdu)  rating = rating + 0.00333
+        if (gender='M' && (  age>=25 && age < 150)  && higherEdu)  rating = rating + 0.024949
+        if (gender='M' && (  age>=25 && age < 150))                rating = rating + 0.010387
+        if (gender='M' && (  age>=35 && age < 44)   && higherEdu)  rating = rating + 0.00823
+        if (gender='M' && (  age>=35 && age < 44))                 rating = rating + 0.001309
+        if (gender='M' && (  age>=45 && age < 64)   && higherEdu)  rating = rating + 0.000614
+        if (gender='M' && (  age>=45 && age < 64))                 rating = rating + 0.001251
+        if (gender='M' && (  age>=65 && age < 150)  && higherEdu)  rating = rating + 0.004096
+        if (gender='M' && (  age>=65 && age < 150))                rating = rating + 0.009753
+        if (gender='M' && (  age>=0   && age < 150) && higherEdu)  rating = rating + 0.001027
+        return (rating*100).toFixed(4);
 
     }
-    setUpTangle();
 
 </script>
