@@ -145,7 +145,7 @@
 
     $("#age").slider({
         id: "ageSlider",
-        min: 0,
+        min: 18,
         max: 120,
         value: 30,
     });
@@ -179,25 +179,49 @@
 
     var state_ranks = {"AK":0,"AL":2,"AR":0,"AZ":6,"CA":15,"CO":3,"CT":2,"DC":2,"DE":4,"FL":3,"GA":5,"HI":3,"IA":0,"ID":0,"IL":3,"IN":2,"KS":0,"KY":1,"LA":1,"MA":1,"MD":7,"ME":1,"MI":5,"MN":3,"MO":0,"MS":0,"MT":1,"NC":1,"ND":0,"NE":1,"NH":0,"NJ":3,"NM":0,"NV":3,"NY":2,"OH":0,"OK":0,"OR":2,"PA":2,"PR":0,"RI":1,"SC":1,"SD":0,"TN":2,"TX":3,"UT":3,"VA":3,"VT":0,"WA":2,"WI":2,"WV":0,"WY":0}
 
-    function rateIt(income, gender, age, higherEdu, homeOwnership, state){
-        rating = 0
-        if (income>=10000   && income <  14999)     rating = rating +  0.00031;
-        if (income>=100000  && income <  124999)    rating = rating +  0.0271;
-        if (income>=125000  && income <  149999)    rating = rating +  0.160549;
-        if (income>=15000   && income <  19999)     rating = rating +  0.00102;
-        if (income>=150000  && income <  199999)    rating = rating +  0.337935;
-        if (income>=20000   && income <  24999)     rating = rating +  0.000189;
-        if (income>=200000  && income <  100000000) rating = rating +  0.120424;
-        if (income>=25000   && income <  29999)     rating = rating +  0.068113;
-        if (income>=30000   && income <  34999)     rating = rating +  0.000928;
-        if (income>=35000   && income <  39999)     rating = rating +  0.000076;
-        if (income>=40000   && income <  44999)     rating = rating +  0.000194;
-        if (income>=45000   && income <  49999)     rating = rating +  0.000072;
-        if (income>=50000   && income <  59999)     rating = rating +  0.000132;
-        if (income>=60000   && income <  74999)     rating = rating +  0.062264;
-        if (income>=75000   && income <  99999)     rating = rating +  0.003614;
-        if (income>=0       && income <  10000)     rating = rating +  0.077694;
+    function incomeRating(income){
+        incs = [{'l':0, 'u':10000,'r':0.077694},{'l':10000, 'u':14999,'r':0.00031},{'l':15000, 'u':19999,'r':0.00102},{'l':20000, 'u':24999,'r':0.000189},{'l':25000, 'u':29999,'r':0.068113},{'l':30000, 'u':34999,'r':0.000928},{'l':35000, 'u':39999,'r':0.000076},{'l':40000, 'u':44999,'r':0.000194},{'l':45000, 'u':49999,'r':0.000072},{'l':50000, 'u':59999,'r':0.000132},{'l':60000, 'u':74999,'r':0.062264},{'l':75000, 'u':99999,'r':0.003614},{'l':100000, 'u':124999,'r':0.0271},{'l':125000, 'u':149999,'r':0.160549},{'l':150000, 'u':199999,'r':0.337935},{'l':200000, 'u':100000000,'r':0.120424}]
+        var idx = 0;
+        for (var i=0; i<incs.length;i++){
+                inc = incs[i]
+                if (income >= inc.l && income <= inc.u){
+                        idx = i;
+                        break;
+                }
+        }
 
+        var rating = incs[idx].r
+
+        var ten = (incs[idx].u - incs[idx].l) /10
+        console.log("TEN")
+        var upper = {}, lower = {}
+        if (income - incs[idx].l <= ten){
+            upper = incs[idx]
+            lower = incs[idx-1]
+        } else if (incs[idx].u - income < ten){
+            upper = incs[idx+1]
+            lower = incs[idx]             
+        } else {
+            return rating
+        }
+
+        ten = (lower.u - lower.l) /10
+        var y1 = lower.r
+        var x1 = lower.u - ten
+        ten = (upper.u - upper.l) /10
+        var y2 = upper.r
+        var x2 = upper.l + ten
+        rating = (y2-y1) /(x2-x1)*(income-x1) + y1
+
+        return rating
+
+        // } else {
+        //         return incs[idx].r
+        // }        
+    }
+    
+    function rateIt(income, gender, age, higherEdu, homeOwnership, state){
+        rating = incomeRating(income)
 
         if (gender=='F' && (  age>=18 && age < 24))                 rating = rating + 0.000894
         if (gender=='F' && (  age>=25 && age < 34)   && higherEdu)  rating = rating + 0.000247
@@ -231,6 +255,7 @@
         rating = rating + state_ranks[state]*0.002248
 
         return (rating*100*100/45).toFixed(2);
+        // return rating;
 
     }
     updateRates()
