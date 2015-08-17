@@ -6,7 +6,7 @@
 
 body {
     overflow-x: hidden;
-    font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Varela Round","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 .text-muted {
@@ -20,6 +20,7 @@ body {
 p {
     font-size: 14px;
     line-height: 1.75;
+    padding: 20px;
 }
 
 p.large {
@@ -47,12 +48,16 @@ a.active {
 
 h1,
 h2,
-h3,
+h3, {
+    text-transform: uppercase;
+    font-family: 'Varela Round',"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
 h4,
 h5,
-h6 {
-    text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+h6, {
+    font-family: 'Varela Round',"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
 
@@ -71,7 +76,7 @@ h6 {
 .btn-primary {
     border-color: #fed136;
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Varela Round',"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     color: #fff;
     background-color: #fed136;
@@ -122,7 +127,7 @@ fieldset[disabled] .btn-primary.active {
     border-color: #fed136;
     border-radius: 3px;
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Varela Round',"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 18px;
     font-weight: 700;
     color: #fff;
@@ -207,7 +212,7 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-default .nav li a {
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Varela Round',"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 400;
     letter-spacing: 1px;
     color: #fff;
@@ -282,7 +287,7 @@ header .intro-text {
 
 header .intro-text .intro-lead-in {
     margin-bottom: 25px;
-    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Varela Round","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 22px;
     font-style: italic;
     line-height: 22px;
@@ -290,8 +295,9 @@ header .intro-text .intro-lead-in {
 
 header .intro-text .intro-heading {
     margin-bottom: 25px;
-    text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  /*   text-transform: uppercase; */
+    font-family: Architects Daughter, cursive;
+/*     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif; */
     font-size: 50px;
     font-weight: 700;
     line-height: 50px;
@@ -299,25 +305,27 @@ header .intro-text .intro-heading {
 
 @media(min-width:768px) {
     header .intro-text {
-        padding-top: 75px;
+        padding-top: 50px;
 /*         padding-top: 300px; */
-        padding-bottom: 425px;
+        padding-bottom: 550px;
 /*         padding-bottom: 200px; */
     }
 
     header .intro-text .intro-lead-in {
         margin-bottom: 85px;
-        font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-family: "Varela Round","Helvetica Neue",Helvetica,Arial,sans-serif;
         font-size: 40px;
         font-style: italic;
         line-height: 40px;
     }
 
     header .intro-text .intro-heading {
-        margin-bottom: 50px;
-        text-transform: uppercase;
-        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-        font-size: 75px;
+        margin-bottom: 25px;
+     /*    text-transform: uppercase; */
+        font-family: Architects Daughter, cursive;
+     /*    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif; */
+        font-size: 60px;
+     /*    color: #FF0066; */
         font-weight: 700;
         line-height: 75px;
     }
@@ -336,7 +344,7 @@ section h2.section-heading {
 section h3.section-subheading {
     margin-bottom: 75px;
     text-transform: none;
-    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Varela Round","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 16px;
     font-style: italic;
     font-weight: 400;
@@ -344,7 +352,7 @@ section h3.section-subheading {
 
 @media(min-width:768px) {
     section {
-        padding: 150px 0;
+        padding: 100px 0;
     }
 }
 
@@ -415,7 +423,7 @@ section h3.section-subheading {
 
 #portfolio .portfolio-item .portfolio-caption p {
     margin: 0;
-    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Varela Round","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 16px;
     font-style: italic;
 }
@@ -793,7 +801,7 @@ ul.social-buttons li a:active {
 
 .portfolio-modal .modal-content p.item-intro {
     margin: 20px 0 30px;
-    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Varela Round","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 16px;
     font-style: italic;
 }
