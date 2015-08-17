@@ -72,7 +72,7 @@
                         <a class="page-scroll" href="#marketing">Marketing</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#team">Team</a>
+                        <a class="page-scroll" href="#nextsteps">Next Steps</a>
                     </li>
                 </ul>
             </div>
@@ -191,7 +191,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Modeling</h2>
-                    <h3 class="section-subheading text-muted">Applying Machine Learning Techniques to Determine Demographic Features Most Associated with EV Ownership</h3>
+                    <h3 class="section-subheading text-muted">Applying Machine Learning Techniques to Determine<br />Demographic Features Most Associated with EV Ownership</h3>
                 </div>
             </div>
             <div class="row">
@@ -215,10 +215,22 @@
         </div>
     </section>
 
+    
+    
+    
+    
+    
+    
+    
     <!-- Lead Rating Section -->
     <section id="marketing" class="bg-light-gray">
         <div class="container">
-            
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Marketing</h2>
+                    <h3 class="section-subheading text-muted">Using Our Model Output to Determine Individuals and Regions to Advertise to</h3>
+                </div>
+            </div>
         
             
             <link href="../css/bootstrap-slider.css" rel="stylesheet">
@@ -469,17 +481,17 @@
             </script> 
             
             
-            
-            
-            
-            
+            <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Regional Markets</h1>
+    
             
             <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1004px; height: 719px;'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;fi&#47;final_46&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='1004' height='719' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='final_46&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;fi&#47;final_46&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='showVizHome' value='no' /><param name='showTabs' value='y' /><param name='bootstrapWhenNotified' value='true' /></object></div>
             
             
+            </div>
             
-            
-            
+            </div>
             
             
             
@@ -488,6 +500,55 @@
     </section>
 
     
+    
+    <!-- Next Steps Section -->
+    <section id="nextsteps">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Next Steps</h2>
+                    <h3 class="section-subheading text-muted">Future Improvements and Follow-ups</h3>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+<!--
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-car fa-stack-1x fa-inverse"></i>
+                    </span>
+-->
+                    <h4 class="service-heading">STEP 1:<br />Refine the Problem</h4>
+                    <p class="text-muted">How do we spend our advertising budget in order to maximize ROI?</p>
+                    <p class="text-muted">In order to maximize ROI, we need to advertise to the individuals and regions that are most likely to purchase an electric vehicle (EV).</p>
+                    <p class="text-muted">How do we determine which individuals and regions are most likely to purchase an EV?</p>
+                </div>
+                <div class="col-md-4">
+<!--
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                    </span>
+-->
+                    <h4 class="service-heading">STEP 2:<br />Operationalize Based on Available Data</h4>
+                    <p class="text-muted">The ideal dataset would contain every EV owner's defining qualities, so we could determine if any qualities are highly predictive of EV ownership.</p>
+                    <p class="text-muted">EV owner data is not publicly available, but EV charging station location data is available as well as demographic data.</p>
+                    <p class="text-muted">Use EV charging station locations as a proxy for EV ownership and use demographic data for locations with EV charging stations as a proxy for EV owner qualities.</p>
+                </div>
+                <div class="col-md-4">
+<!--
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
+                    </span>
+-->
+                    <h4 class="service-heading">STEP 3:<br />Collect and Prepare Data for Modeling</h4>
+                    <p class="text-muted">Conduct some background research to decide which demographic qualities are most likely to predict EV ownership. (These turned out to be income, educational attainment, and home ownership.)</p>
+                    <p class="text-muted">Download EV charging station and demographic data and wrangle it to merge them together, keep only the relevant columns, and deal with missing values.</p>
+                </div>
+            </div>
+        </div>
+    </section>
     
 <!--Timeline-->
     <!-- About Section -->
@@ -574,6 +635,7 @@
 -->
 
     <!-- Team Section -->
+<!--
     <section id="team">
         <div class="container">
             <div class="row">
@@ -636,11 +698,13 @@
             </div>
         </div>
     </section>
+-->
 
    
     
     
 
+<!--
     <footer>
         <div class="container">
             <div class="row">
@@ -668,6 +732,7 @@
             </div>
         </div>
     </footer>
+-->
 
    
 
