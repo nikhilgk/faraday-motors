@@ -23,348 +23,169 @@
   <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+  <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-      </head>
+<style type="text/css">
+.navbar{
+    background: rgba(126, 126, 126, 0.3);
+}
 
-      <body id="page-top" class="index">
-        <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-fixed-top">
-          <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand page-scroll" href="#page-top">Faraday Motors</a>
-              <!--                <a class="navbar-brand page-scroll" href="#page-top"><span><img height="30" src="img/logo.png"><img height="30" src="img/name2.png"></span></a>-->
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav navbar-right">
-                <li class="hidden">
-                  <a href="#page-top"></a>
-                </li>
-                <li>
-                  <a class="page-scroll" href="#services">Overview</a>
-                </li>
-                <li>
-                  <a class="page-scroll" href="#data">Data</a>
-                </li>
-                <li>
-                  <a class="page-scroll" href="#modeling">Modeling</a>
-                </li>
-                <li>
-                  <a class="page-scroll" href="#marketing">Marketing</a>
-                </li>
-                <li>
-                  <a class="page-scroll" href="#nextsteps">Next Steps</a>
-                </li>
-              </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-          </div>
-          <!-- /.container-fluid -->
-        </nav>
-        <!-- Header -->
-        <header>
-          <div class="container">
-            <div class="intro-text">
-              <div class="intro-lead-in"> </div>
-              <div class="intro-heading">Marketing Electric Cars</div>
-              <!-- <a href="#overview" class="page-scroll btn btn-xl">Tell Me More</a> -->
-            </div>
-          </div>
-        </header>
-        <!-- Overview Section -->
-        <section id="overview">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-12 text-center">
-                <h2 class="section-heading">Overview</h2>
-                <h3 class="section-subheading text-muted">Framing the problem, who we're solving it for, and its impact</h3>
-              </div>
-            </div>
-            <div class="row text-center">
-              <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                  <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                  <i class="fa fa-users fa-stack-1x fa-inverse"></i>
-                </span>
-                <h4 class="service-heading">The Company</h4>
-                <ul class="text-muted text-left">
-                  <li>Electric Car startup in Detroit</li>
-                  <li>Billionaire founder with multiple investment sources</li>
-                  <li>Successful prototypes and racing models </li>
-                  <li>Revving up factories and production in the next six months</li>
-                </ul>
-              </div>
-              <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                  <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                  <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
-                </span>
-                <h4 class="service-heading">Marketing Department</h4>
-                <p class="text-muted">Has a limited budget and wants to maximize the return on advertising spending. Competing with bigger brands with more revenue and historuc data, wishes to market efficiently to the markets with the most potential and potential leads with the highest likelihood of buying an electric car.</p>
-              </div>
-              <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                  <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                  <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
-                </span>
-                <h4 class="service-heading">Problem Statement</h4>
-                <p class="text-muted">Using public and open data sets:</p>
-                <ul class="text-muted text-left">
-                  <li>identify the best target demographics and markets for marketing and broadcast advertising</li>
-                  <li>rate each potential lead based on likelihood of buying an electric car</li>
-                  <li>build tools that help marketing campaign managers to make informed data driven decision</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- Data Section -->
-        <section id="data" class="bg-info">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-12 text-center">
-                <h2 class="section-heading">Data</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                <p>Data is...</p>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- Modeling Section -->
-        <section id="modeling">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-12 text-center">
-                <h2 class="section-heading">Modeling</h2>
-                <h3 class="section-subheading text-muted">Applying Machine Learning Techniques to Determine<br />Demographic Features Most Associated with EV Ownership</h3>
-              </div>
-            </div>
-            <div class="row">
-              <h3>Initial Feature Selection and Model Evaluation</h3>
-              <br />
-              <p>The urban areas data set contains aggregated EV charging stations for each of 3,600 urban areas and we used the raw station count as our dependent variable or label and turned the modeling exercise into a classic supervised learning problem. The predictors or independent variables are the demographic covariates from the Census American Community Survey data and EV incentives (at the state level). The diagram below illustrates our modeling methodology and approach.</p>
-              <br />
-              <div class="row text-center"><img src="../modelingmethodology/modeling_methodology.png" alt="" width="750"></div>
-              <br />
-              <p>We took two parallel paths, a path for finding the best algorithm for the problem with an initial feature set and another path for systematic feature search and optimization, to arrive at our optimal model. We selected an initial subset of the features from the original set of 73 demographic covariates (features), based on our ‘gut’ feel and some recent EV surveys. The initial features selected include number of high-income households, education levels (e.g., % of college graduates), home ownership, and the populations of different age groups.</p>
-              <p>Our initial models contained 10 and 25 features and we ran the following 4 different learners, two linear learners: linear regression and logistic regression, and two ensemble learners: Random Forest (L. Breiman, “Random Forests”, Machine Learning, 45(1), 5-32, 2001) and extremely randomized decision trees (P. Geurts, D. Ernst., and L. Wehenkel, “Extremely randomized trees”, Machine Learning, 63(1), 3-42, 2006, ExtraTrees in sklearn with >200 trees). To evaluate the different learners, we first examined the various scores derived from the test data set (http://scikit-learn.org/stable/modules/model_evaluation.html), average accuracy scores and R^2 scores were most useful. We then visually examined the predicted charging station counts vs. the actual charing station counts. Since ROC curves are not relevant for multi-class classification and regression, we find our simple visualization extremely effective in identifying models that overfit.</p>
-              <div class="row text-center"><img src="../modelingmethodology/table.png" alt="" width="500"></div>
-              <br />
-              <br />
-              <p>It was no surprise that we discovered many regressors overfitted the training set. Our visual examination was critical for us to quickly assess different learners and choose the best algorithm for the problem. Overfitting was obvious visually: when the predicted vs actual station counts for training set all line up diagonally while the predicted vs. actual counts for the test set scatter or cluster above or below the diagonal line, we know that the algorithm overfitted the training set.</p>
-              <p>We found that ensemble learners were more accurate than the linear learners by 14-27%. Overall, the Random Forest regressor had the second best scores (>85% for both accuracy and R^2 scores) and it also did not overfit the training set. Logistic Regression and extremely randomized trees grossly overfit the training set. By definition, Random Forest’s ‘bagging’ and random feature selection effectively avoids the issue of overfitting.
-              </p>
-              <div class="row text-center"><img src="../modelingmethodology/Fig-LinearRegression.png" alt="" width="500"><img src="../modelingmethodology/Fig-LogisticRegression.png" alt="" width="500"></div>
-              <div class="row text-center"><img src="../modelingmethodology/Fig-RandomForest.png" alt="" width="500"><img src="../modelingmethodology/Fig-DecisionTrees.png" alt="" width="500"></div>
-              <br />
-              <br />
-              <br />
-              <br />
-              <div class="row"></div>
-              <div class="col-lg-4 "></div>
-              <div class="col-lg-4 "></div>
-            </div>
-            <h3>Feature Selection and Minimal Optimal Model</h3>
-            <p>Now that we determined a Random Forest regressor worked the best with ad-hoc features, we needed a systematic way to search the feature space as we did not want to just rely on gut feel or the existing surveys and research. Our goal is to discover demographic features and other covariates that are not obviously correlated with EV prevalence or interest. We found in the literature a novel feature selection algorithm proposed by Kursa and Rudnicki in 2010 (http://www.jstatsoft.org/v36/i11/paper). The proposed algorithm was designed as wrapper around a Random Forest learner and it iteratively eliminates features by using a statistical test (z-score). They implemented this as an R package, Boruta. Daniel Homola ported a Python implementation (https://bitbucket.org/danielhomola/boruta_py/) of Boruta and it works out of box with sklearn, the Python machine learning package we used. Running Boruta for all available features consistently returned a set of 9 or so features which provided us with valuable insights into our data set. It was encouraging and satisfying that many of the significant features returned by Boruta also coincide with our initial gut feel. Features such as the number of households with income over $100,000, the populations of young people in the 25 to 34 year old and the 35 to 44 year old age groups, and total number of college graduates, showed up consistently in Boruta outputs. Our ad-hoc feature selections included many of these features plus the overall population and number of households. Interestingly, the total population and number of households were never significant in either the ad-hoc modeling and the Boruta feature searching, indicating that the raw number of EV charging stations do not track population and other features are more significant for EV interest or prevalence. A result that we were hoping to get from the start!</p>
-            <p>Combining the Boruta results and that from the ad-hoc modeling, we selected 14 features for our “minimal optimal” feature set to feed into a Random Forest classifier. Theoretically, Occam’s Razor or the principle of parsimony calls for models that contain all that is necessary but nothing more. Practically, a minimal optimal model is attractive for it provides the best explanation of the data and has the most predictive power but with the smallest set of relevant features. Our final model has excellent predictive power (with scores >85% for the test set) and is also not sensitive to the number of features as long as the most significant features such as, the households of the highest income brackets and the population of young age groups, are included. We used the output from our optimal model to predict the “best markets” for Faraday Motor’s marketing division.
-            </p>
-            <div class="row text-center"><img src="../modelingmethodology/Fig-RandomForest-Optimal.png" alt="" width="500"></div>
-          </div>
+</style>        
+</head>
+
+<body id="page-top" class="index">
+  <!-- Navigation -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container ">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header page-scroll">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand page-scroll" href="#page-top">Faraday Motors</a>
+        <!--                <a class="navbar-brand page-scroll" href="#page-top"><span><img height="30" src="img/logo.png"><img height="30" src="img/name2.png"></span></a>-->
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="hidden">
+            <a href="#page-top"></a>
+          </li>
+          <li>
+            <a class="page-scroll" href="#services">Overview</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="#approach">Approach</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="#modeling">Modeling</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="#marketing">Marketing</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="#nextsteps">Next Steps</a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="intro-text">
+        <div class="intro-lead-in"> </div>
+        <div class="intro-heading">Marketing Electric Cars</div>
+        <!-- <a href="#overview" class="page-scroll btn btn-xl">Tell Me More</a> -->
+      </div>
+    </div>
+  </header>
+  <!-- Overview Section -->
+  <section id="overview">
+    <div class="container" id="ss-overview"></div>
+  </section>
+  <!-- Data Section -->
+  <section id="approach" class="bg-info">
+    <div class="container" id="ss-approach">
+    </div>
+  </section>
+  <!-- Modeling Section -->
+  <section id="modeling" class="bg-light-gray">
+    <div class="container" id="ss-modeling"></div>
+  </section>
+  <!-- Marketing -->
+  <section id="marketing" class="bg-danger">
+    <div class="container" id="ss-marketing"></div>
+  </section>
+  <!-- Lead Rating Section -->
+  <section id="ss-leads" class="bg-warning">
+    <div class="container" id="sp-lead-rating"></div>
+  </section>
+  <!-- Personas Section -->
+  <section id="ss-personas" class="">
+    <div class="container" id="sp-personas"></div>
+  </section>
+  <!-- Markets section -->
+  <section id="ss-markets" class="bg-success">
+    <div class="container" id="sp-markets"></div>
+  </section>
+  <!-- Next Steps Section -->
+  <section id="nextsteps">
+    <div class="container" id="ss-nextsteps"></div>
+  </section>
+  <!-- Team Section -->
+  <section id="team" class="bg-success">
+    <div class="container" id="ss-team"></div>
+  </section>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <span class="copyright">Copyright &copy; Your Website 2014</span>
         </div>
-      </section>
-      <!-- Marketing -->
-      <section id="marketing" class="bg-light-gray">
-        <div class="container" id="markets"></div>
-      </section>
-      <!-- Lead Rating Section -->
-      <section id="ss-leads" class="bg-warning">
-        <div class="container" id="sp-lead-rating"></div>
-      </section>
-      <!-- Lead Rating Section -->
-      <section id="ss-personas" class="bg-light-gray">
-        <div class="container" id="sp-personas"></div>
-      </section>
-      <!-- Markets section -->
-      <section id="ss-markets" class="bg-light-gray">
-        <div class="container" id="sp-markets"></div>
-      </section>
-      <!-- Next Steps Section -->
-      <section id="nextsteps">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12 text-center">
-              <h2 class="section-heading">Next Steps</h2>
-              <h3 class="section-subheading text-muted">Future Improvements and Follow-ups</h3>
-            </div>
-          </div>
-          <div class="row text-center">
-            <div class="col-md-4">
-                    <!--
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-car fa-stack-1x fa-inverse"></i>
-                    </span>
-                  -->
-                  <h4 class="service-heading">STEP 1:<br />Refine the Problem</h4>
-                  <p class="text-muted">How do we spend our advertising budget in order to maximize ROI?</p>
-                  <p class="text-muted">In order to maximize ROI, we need to advertise to the individuals and regions that are most likely to purchase an electric vehicle (EV).</p>
-                  <p class="text-muted">How do we determine which individuals and regions are most likely to purchase an EV?</p>
-                </div>
-                <div class="col-md-4">
-                    <!--
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
-                    </span>
-                  -->
-                  <h4 class="service-heading">STEP 2:<br />Operationalize Based on Available Data</h4>
-                  <p class="text-muted">The ideal dataset would contain every EV owner's defining qualities, so we could determine if any qualities are highly predictive of EV ownership.</p>
-                  <p class="text-muted">EV owner data is not publicly available, but EV charging station location data is available as well as demographic data.</p>
-                  <p class="text-muted">Use EV charging station locations as a proxy for EV ownership and use demographic data for locations with EV charging stations as a proxy for EV owner qualities.</p>
-                </div>
-                <div class="col-md-4">
-                    <!--
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
-                    </span>
-                  -->
-                  <h4 class="service-heading">STEP 3:<br />Collect and Prepare Data for Modeling</h4>
-                  <p class="text-muted">Conduct some background research to decide which demographic qualities are most likely to predict EV ownership. (These turned out to be income, educational attainment, and home ownership.)</p>
-                  <p class="text-muted">Download EV charging station and demographic data and wrangle it to merge them together, keep only the relevant columns, and deal with missing values.</p>
-                </div>
-              </div>
-            </div>
-          </section>
-          <!-- Team Section -->
-          <section id="team" class="bg-success">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-12 text-center">
-                  <h2 class="section-heading">Our Amazing Team</h2>
-                  <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-sm-4">
-                  <div class="team-member">
-                    <img src="img/team/1.png" class="img-responsive img-circle" alt="">
-                    <h4>Kelsey Clubb</h4>
-                    <p class="text-muted"></p>
-                    <ul class="list-inline social-buttons">
-                      <li><a href="#"><i class="fa fa-twitter"></i></a>
-                      </li>
-                      <li><a href="#"><i class="fa fa-facebook"></i></a>
-                      </li>
-                      <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="team-member">
-                    <img src="img/team/2.png" class="img-responsive img-circle" alt="">
-                    <h4>Nikhil Kurup</h4>
-                    <p class="text-muted"></p>
-                    <ul class="list-inline social-buttons">
-                      <li><a href="#"><i class="fa fa-twitter"></i></a>
-                      </li>
-                      <li><a href="#"><i class="fa fa-facebook"></i></a>
-                      </li>
-                      <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="team-member">
-                    <img src="img/team/3.png" class="img-responsive img-circle" alt="">
-                    <h4>Sean Wang</h4>
-                    <p class="text-muted"></p>
-                    <ul class="list-inline social-buttons">
-                      <li><a href="#"><i class="fa fa-twitter"></i></a>
-                      </li>
-                      <li><a href="#"><i class="fa fa-facebook"></i></a>
-                      </li>
-                      <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                  <p class="large text-muted">Data Science graduate students at UC Berkeley.</p>
-                </div>
-              </div>
-            </div>
-          </section>
-          <footer>
-            <div class="container">
-              <div class="row">
-                <div class="col-md-4">
-                  <span class="copyright">Copyright &copy; Your Website 2014</span>
-                </div>
-                <div class="col-md-4">
-                  <ul class="list-inline social-buttons">
-                    <li><a href="#"><i class="fa fa-twitter"></i></a>
-                    </li>
-                    <li><a href="#"><i class="fa fa-facebook"></i></a>
-                    </li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-md-4">
-                  <ul class="list-inline quicklinks">
-                    <li><a href="#">Privacy Policy</a>
-                    </li>
-                    <li><a href="#">Terms of Use</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </footer>
-          <!-- jQuery -->
-          <script src="js/jquery.js"></script>
-          <!-- Bootstrap Core JavaScript -->
-          <script src="js/bootstrap.min.js"></script>
-          <!-- Plugin JavaScript -->
-          <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-          <script src="js/classie.js"></script>
-          <script src="js/cbpAnimatedHeader.js"></script>
-          <!-- Contact Form JavaScript -->
-          <script src="js/jqBootstrapValidation.js"></script>
-          <script src="js/contact_me.js"></script>
-          <!-- Custom Theme JavaScript -->
-          <script src="js/agency.js"></script>
-        </body>
+        <div class="col-md-4">
+          <ul class="list-inline social-buttons">
+            <li><a href="#"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li><a href="#"><i class="fa fa-facebook"></i></a>
+            </li>
+            <li><a href="#"><i class="fa fa-linkedin"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <ul class="list-inline quicklinks">
+            <li><a href="#">Privacy Policy</a>
+            </li>
+            <li><a href="#">Terms of Use</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- jQuery -->
+  <script src="js/jquery.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+  <!-- Plugin JavaScript -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+  <script src="js/classie.js"></script>
+  <script src="js/cbpAnimatedHeader.js"></script>
+  <!-- Contact Form JavaScript -->
+  <script src="js/jqBootstrapValidation.js"></script>
+  <script src="js/contact_me.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script src="js/agency.js"></script>
+</body>
 
-        </html>
-        <script type="text/javascript">
-          function subpage(id, page) {
-            $(id).load(page, function() {
-              if ($("#morris-area-chart").size() > 0) {
-                mdata();
-              }
-            });
-          }
+</html>
+<script type="text/javascript">
+function subpage(id, page) {
+  $(id).load(page, function() {
+    if ($("#morris-area-chart").size() > 0) {
+      mdata();
+    }
+  });
+}
 
-          $(document).ready(function() {
-            subpage("#sp-lead-rating", "/faraday-marketing/pages/rating.html");
-            subpage("#sp-markets", "/faraday-marketing/pages/markets.html");
-            subpage("#sp-personas", "/faraday-marketing/pages/personas.html");
-          });
-        </script>
-        <script src="http://localhost:35729/livereload.js"></script>
+$(document).ready(function() {
+  subpage("#ss-approach", "/SingleScrollWebpage/sections/approach.html");
+  subpage("#ss-team", "/SingleScrollWebpage/sections/team.html");
+  subpage("#ss-nextsteps", "/SingleScrollWebpage/sections/nextsteps.html");
+  subpage("#ss-modeling", "/SingleScrollWebpage/sections/modeling.html");
+  subpage("#ss-overview", "/SingleScrollWebpage/sections/overview.html");
+  subpage("#ss-marketing", "/SingleScrollWebpage/sections/marketing.html");
+  subpage("#sp-lead-rating", "/faraday-marketing/pages/rating.html");
+  subpage("#sp-markets", "/faraday-marketing/pages/markets.html");
+  subpage("#sp-personas", "/faraday-marketing/pages/personas.html");
+});
+</script>
+<script src="http://localhost:35729/livereload.js"></script>
